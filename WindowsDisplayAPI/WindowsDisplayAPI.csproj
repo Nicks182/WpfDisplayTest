@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
-    <Version>1.3.0.14</Version>
+    <Version>1.3.0.14-dev0001</Version>
     <Company>falahati.net</Company>
     <Description>WindowsDisplayAPI is a .Net wrapper for Windows Display and Windows CCD APIs</Description>
     <Authors>Soroush Falahati</Authors>

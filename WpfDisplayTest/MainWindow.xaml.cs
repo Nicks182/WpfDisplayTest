@@ -90,12 +90,12 @@ namespace WpfDisplayTest
             List<string> L_Display_Active_Names = new List<string>();
             foreach(var dis in L_Displays)
             {
-                L_Display_Active_Names.Add(dis.DisplayName);
+                L_Display_Active_Names.Add(dis.ScreenName);
             }
 
             foreach (var dis in L_DeadDisplays)
             {
-                L_Display_Active_Names.Add(dis.DisplayName);
+                L_Display_Active_Names.Add(dis.ScreenName);
             }
 
             WindowsDisplayAPI.Display L_Display = WindowsDisplayAPI.Display.GetDisplays().Where(d => d.DevicePath.EncodeBase64().Equals(L_DevicePath_Base64)).FirstOrDefault();
