@@ -88,15 +88,18 @@ namespace WpfDisplayTest
             List<WindowsDisplayAPI.UnAttachedDisplay> L_DeadDisplays = WindowsDisplayAPI.UnAttachedDisplay.GetUnAttachedDisplays().ToList();
 
             List<string> L_Display_Active_Names = new List<string>();
-            foreach(var dis in L_Displays)
+            foreach(var ActiveDisplay in L_Displays)
             {
-                L_Display_Active_Names.Add(dis.ScreenName);
+                L_Display_Active_Names.Add("Active == " + ActiveDisplay.ScreenName);
             }
 
-            foreach (var dis in L_DeadDisplays)
+            foreach (var DeadDisplay in L_DeadDisplays)
             {
-                L_Display_Active_Names.Add(dis.ScreenName);
+                L_Display_Active_Names.Add("Disabled == " + DeadDisplay.ScreenName);
             }
+
+
+
 
             WindowsDisplayAPI.Display L_Display = WindowsDisplayAPI.Display.GetDisplays().Where(d => d.DevicePath.EncodeBase64().Equals(L_DevicePath_Base64)).FirstOrDefault();
             WindowsDisplayAPI.UnAttachedDisplay L_DeadDisplay = WindowsDisplayAPI.UnAttachedDisplay.GetUnAttachedDisplays().Where(d => d.DevicePath.EncodeBase64().Equals(L_DevicePath_Base64)).FirstOrDefault();
